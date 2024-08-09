@@ -1,7 +1,5 @@
 # Tic-Tac-Toe Game
 
-![Tic-Tac-Toe](path_to_your_screenshot_image)
-
 A simple Tic-Tac-Toe game built using HTML, CSS, JavaScript, and Bootstrap. This project demonstrates basic front-end web development skills and is a fun way to play a classic game in the browser.
 
 ## Features
