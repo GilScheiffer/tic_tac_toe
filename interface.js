@@ -19,40 +19,39 @@ function handleClick(event) {
     }
 
     if (handleMove(position)) {
+        if (playerTurn == 0) {
+            // Função para lançar confetes das laterais
+            confetti({
+                particleCount: 150, // Aumenta a quantidade de confetes
+                spread: 60,         // Ângulo de dispersão
+                origin: { x: 0, y: 0.6 }, // Origem dos confetes na lateral esquerda
+                colors: ['#785DC8', '#785DC8']
+            });
+
+            confetti({
+                particleCount: 150, // Aumenta a quantidade de confetes
+                spread: 60,         // Ângulo de dispersão
+                origin: { x: 1, y: 0.6 }, // Origem dos confetes na lateral direita
+                colors: ['#785DC8', '#785DC8']
+            });
+        } else {
+            // Função para lançar confetes das laterais
+            confetti({
+                particleCount: 150, // Aumenta a quantidade de confetes
+                spread: 60,         // Ângulo de dispersão
+                origin: { x: 0, y: 0.6 }, // Origem dos confetes na lateral esquerda
+                colors: ['#F92F60', '#F92F60']
+            });
+
+            confetti({
+                particleCount: 150, // Aumenta a quantidade de confetes
+                spread: 60,         // Ângulo de dispersão
+                origin: { x: 1, y: 0.6 }, // Origem dos confetes na lateral direita
+                colors: ['#F92F60', '#F92F60']
+            });
+        }
         setTimeout(() => {
-            let winnerMessage = playerTurn == 0 ? 'Vitória do ✖️!!' : 'Vitória do ⭕!!';
-
-            if (playerTurn == 0) {
-                // Função para lançar confetes das laterais
-                confetti({
-                    particleCount: 150, // Aumenta a quantidade de confetes
-                    spread: 60,         // Ângulo de dispersão
-                    origin: { x: 0, y: 0.6 }, // Origem dos confetes na lateral esquerda
-                    colors: ['#785DC8', '#785DC8']
-                });
-
-                confetti({
-                    particleCount: 150, // Aumenta a quantidade de confetes
-                    spread: 60,         // Ângulo de dispersão
-                    origin: { x: 1, y: 0.6 }, // Origem dos confetes na lateral direita
-                    colors: ['#785DC8', '#785DC8']
-                });
-            } else {
-                // Função para lançar confetes das laterais
-                confetti({
-                    particleCount: 150, // Aumenta a quantidade de confetes
-                    spread: 60,         // Ângulo de dispersão
-                    origin: { x: 0, y: 0.6 }, // Origem dos confetes na lateral esquerda
-                    colors: ['#F92F60', '#F92F60']
-                });
-
-                confetti({
-                    particleCount: 150, // Aumenta a quantidade de confetes
-                    spread: 60,         // Ângulo de dispersão
-                    origin: { x: 1, y: 0.6 }, // Origem dos confetes na lateral direita
-                    colors: ['#F92F60', '#F92F60']
-                });
-            }
+            let winnerMessage = playerTurn == 0 ? 'Player ✖️ won!!' : 'Player ⭕ won!!';
 
             // Atualiza o conteúdo do modal
             document.querySelector('#winModal .modal-body').textContent = winnerMessage;
@@ -65,7 +64,7 @@ function handleClick(event) {
             document.getElementById('playAgainButton').addEventListener('click', function () {
                 location.reload(); // Recarrega a página
             });
-        }, 10);
+        }, 750);
     }
 
 
