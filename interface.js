@@ -64,6 +64,14 @@ function handleClick(event) {
             document.getElementById('playAgainButton').addEventListener('click', function () {
                 location.reload(); // Recarrega a página
             });
+
+            // Adiciona o botao playAgain na pagina
+            document.getElementById('closeButton').addEventListener('click', function () {
+                document.getElementById('playAgain').innerHTML = `<button type="button" class="btn btn-primary" id="playAgainOut">Play Again</button>`
+                document.getElementById('playAgainOut').addEventListener('click', function () {
+                    location.reload(); // Recarrega a página
+                });
+            });
         }, 750);
     }
 
